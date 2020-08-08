@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Kaira</string>
+    <string name="registerFromLogin">Don\'t have an account? Register Here!</string>
+    <string name="loginFromRegister">Already have an account? Log in here!</string>
+    <string name="hintEmail">Email</string>
+    <string name="hintPassword">Password</string>
+    <string name="hintConfirmPassword">Confirm Password</string>
+    <string name="login">Log In</string>
+    <string name="register">Register</string>
+    <string name="submit">Submit</string>
+</resources>
