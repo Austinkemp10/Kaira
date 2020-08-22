@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,6 +29,9 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseAuthWeakPasswordException;
 import com.google.firebase.auth.FirebaseUser;
 
 public class Register extends AppCompatActivity {
@@ -53,10 +57,10 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         //Here we set the variables created above to objects in the GUI
-        editTextEmail = findViewById(R.id.editTextEmail);
-        editTextPassword = findViewById(R.id.editTextPassword);
-        editTextConfirmPassword = findViewById(R.id.editTextConfirmPassword);
-        buttonLogin = findViewById(R.id.buttonLogin);
+        editTextEmail = findViewById(R.id.editTextJobName);
+        editTextPassword = findViewById(R.id.editTextWebsite);
+        editTextConfirmPassword = findViewById(R.id.editTextContactName);
+        buttonLogin = findViewById(R.id.buttonAdd);
         textViewLoginFromRegister = findViewById(R.id.textViewLoginFromRegister);
         progressBar = findViewById(R.id.progressBar);
 
@@ -99,7 +103,20 @@ public class Register extends AppCompatActivity {
                                         startActivity(new Intent(getApplicationContext(), MainActivity.class));
                                     } else {
                                         //Something went wrong with account creation tell the user
-                                        Toast.makeText(Register.this, "Something went wrong", Toast.LENGTH_SHORT).show();
+                                        try {
+                                            throw task.getException();
+                                        } catch(FirebaseAuthWeakPasswordException e) {
+                                            editTextPassword.setError("Password is too weak!");
+                                            editTextPassword.requestFocus();
+                                        } catch(FirebaseAuthInvalidCredentialsException e) {
+                                            editTextEmail.setError("Invalid Email!");
+                                            editTextEmail.requestFocus();
+                                        } catch(FirebaseAuthUserCollisionException e) {
+                                            editTextEmail.setError("User already exists!");
+                                            editTextEmail.requestFocus();
+                                        } catch(Exception e) {
+                                            Log.e("Register", e.getMessage());
+                                        }
                                     }
                                 }
                             });

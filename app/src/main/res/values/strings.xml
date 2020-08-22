@@ -1,4 +1,5 @@
 <resources>
+    <!-- Strings for Login and Register -->
     <string name="app_name">Kaira</string>
     <string name="registerFromLogin">Don\'t have an account? Register Here!</string>
     <string name="loginFromRegister">Already have an account? Log in here!</string>
@@ -8,4 +9,35 @@
     <string name="login">Log In</string>
     <string name="register">Register</string>
     <string name="submit">Submit</string>
+
+    <!-- Strings for fragments-->
+    <string name="list">List</string>
+    <string name="add">Add</string>
+    <string name="person">Person</string>
+    <string name="list_frag">List Fragment</string>
+    <string name="person_frag">Person Fragment</string>
+
+    <!-- Strings for fragment_add.xml -->
+    <string name="company_name">Company Name</string>
+    <string name="add_job">Add a Job</string>
+    <string name="job_name">Job Name</string>
+    <string name="company_website">Company Website</string>
+    <string name="contact_name">Contact Name</string>
+    <string name="contact_email">Contact Email</string>
+    <string name="application_link">Application Link</string>
+    <string name="remind_time">Reminder</string>
+
+    <!-- Strings for fragment_add.xml -->
+    <string name="job_status">Status</string>
+
+    <!-- Strings for job_detail_popup.xml -->
+    <string name="close">Change</string>
+    <string name="edit_status">Edit Job Status</string>
+
+    <string-array name="job_status_array">
+        <item>Applied</item>
+        <item>Accepted</item>
+        <item>Rejected</item>
+        <item>Interview</item>
+    </string-array>
 </resources>

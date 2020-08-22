@@ -7,7 +7,10 @@
     <color name="colorDarkGray">#5D5C61</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
-
+    <color name="colorGreen">#099425</color>
+    <color name="colorBlue">#096f94</color>
+    <color name="colorRed">#ad0900</color>
+    <color name="colorYellow">#ffff05</color>
     <color name="colorPrimaryDark">#000000</color>
     <color name="colorPrimary">#000000</color>
 </resources>

@@ -24,6 +24,10 @@
         <activity android:name=".MainActivity">
 
         </activity>
+        <activity android:name=".jobPopup"
+            android:theme="@style/AppTheme.CustomTheme">
+
+        </activity>
     </application>
 
 </manifest>

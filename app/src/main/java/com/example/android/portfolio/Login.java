@@ -37,9 +37,9 @@ public class Login extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         //Set variables above to GUI objects
-        editTextEmail = findViewById(R.id.editTextEmail);
-        editTextPassword = findViewById(R.id.editTextPassword);
-        buttonLogin = findViewById(R.id.buttonLogin);
+        editTextEmail = findViewById(R.id.editTextJobName);
+        editTextPassword = findViewById(R.id.editTextWebsite);
+        buttonLogin = findViewById(R.id.buttonAdd);
         textViewRegisterFromLogin = findViewById(R.id.textViewRegisterFromLogin);
         progressBar = findViewById(R.id.progressBar2);
 
