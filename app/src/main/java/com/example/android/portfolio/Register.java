@@ -1,15 +1,13 @@
-/* =================================================================================================
-    Class               :               Register
-    Programmer          :               Austin Kempker
-    Date                :               07/08/2020
-    Description         :               In this class I will be handling the logic behind the
-                                        registration page. This will require input validation,
-                                        error handling, and application navigation.
-
-    Additional Features :               1) Email verification
- * ===============================================================================================*/
 package com.example.android.portfolio;
-
+/* =================================================================================================
+ *              Project             :               Kaira
+ *              Filename            :               Register.java
+ *              Programmer          :               Austin Kempker
+ *              Date                :               08/31/2020
+ *              Description         :               This class validates user input to ensure it
+ *                                                  matches our criteria then logs the user in the
+ *                                                  firebase database.
+ * ===============================================================================================*/
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -49,7 +47,14 @@ public class Register extends AppCompatActivity {
     Validation validation = new Validation();
 
 
-
+    /* =============================================================================================
+     *          Function        :       onCreate
+     *
+     *          Description     :       This function sets the onClickListener to the register
+     *                                  Button and adds the user to firebase when it is clicked.
+     *
+     *          Arguments       :       Bundle savedInstanceState
+     * ===========================================================================================*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

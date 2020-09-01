@@ -1,18 +1,26 @@
 package com.example.android.portfolio;
+/* =================================================================================================
+ *              Project             :               Kaira
+ *              Filename            :               ListFragment.java
+ *              Programmer          :               Austin Kempker
+ *              Date                :               08/31/2020
+ *              Description         :               This class takes the values in the job database
+ *                                                  for the logged in user id and displays them with
+ *                                                  a color code associated with the status of the
+ *                                                  job. When a specific job is clicked it opens up
+ *                                                  a popup where the user can change the status of
+ *                                                  a job.
+ *
+ * ===============================================================================================*/
 
-import android.app.Activity;
-import android.app.Instrumentation;
 import android.content.Intent;
-import android.graphics.Color;
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.SimpleCursorAdapter;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -24,20 +32,27 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
-import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
-
-import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.Vector;
 
 import static com.example.android.portfolio.MainActivity.mJobs;
 
 public class ListFragment extends Fragment {
 
+    final int requestCodeList = 10001;
     Job job = new Job();
 
+
+    /* =============================================================================================
+     *          Function        :       onCreateView
+     *
+     *          Description     :       This function gets the information from the layout and maps
+     *                                  it to objects. Then sends information to the jobPopup
+     *                                  fragment when a job is clicked. (Using Intent)
+     *
+     *          Arguments       :       LayoutInflater inflater
+     *                                  ViewGroup container
+     *                                  Bundle savedInstanceState
+     * ===========================================================================================*/
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -49,6 +64,7 @@ public class ListFragment extends Fragment {
 
         final ListView listView = (ListView) view.findViewById(R.id.list);
 
+        //Send information to the jobPopup class so that it can display job information on the popup
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
@@ -56,12 +72,13 @@ public class ListFragment extends Fragment {
                 intent.putExtra("EXTRA_COMPANY_NAME", mJobs.get(i).getCompanyName());
                 intent.putExtra("EXTRA_JOB_NAME", mJobs.get(i).getJobName());
                 intent.putExtra("EXTRA_LOCATION", i);
-                startActivityForResult(intent, 1);
+                getActivity().startActivityForResult(intent, requestCodeList);
             }
         });
 
 
-        FirebaseDatabase.getInstance().getReference(uid).addChildEventListener(new ChildEventListener() {
+        //Update the database with the job when things are added and changed then refresh view
+        FirebaseDatabase.getInstance().getReference("Jobs/" + uid).addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 job = snapshot.getValue(Job.class);
@@ -71,9 +88,6 @@ public class ListFragment extends Fragment {
 
                 adapter.notifyDataSetChanged();
                 listView.setAdapter(adapter);
-                /*for(int x = 0; x < mJobs.size(); x++) {
-                    System.out.println(mJobs.get(x).getCompanyName());
-                }*/
             }
 
             @Override

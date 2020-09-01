@@ -1,4 +1,12 @@
 package com.example.android.portfolio.helpers;
+/* =================================================================================================
+ *              Project             :               Kaira
+ *              Filename            :               Job.java
+ *              Programmer          :               Austin Kempker
+ *              Date                :               08/31/2020
+ *              Description         :               This is a helper class used to create and define
+ *                                                  a job.
+ * ===============================================================================================*/
 
 import java.util.UUID;
 
@@ -12,8 +20,6 @@ public class Job {
     private String applicationLink;
     private String jobState;
     private int dropdownChoice;
-
-    //For jobState 0 = applied, 1 = responded, 2 = interviewing, 3 = rejected, 4 = accepted
 
     public Job() {
 

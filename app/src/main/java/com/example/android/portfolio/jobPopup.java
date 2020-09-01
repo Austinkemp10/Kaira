@@ -1,5 +1,17 @@
 package com.example.android.portfolio;
-
+/* =================================================================================================
+ *              Project             :               Kaira
+ *              Filename            :               jobPopup.java
+ *              Programmer          :               Austin Kempker
+ *              Date                :               08/31/2020
+ *              Description         :               This class gets String extras passed using
+ *                                                  Intent from the JobFragment it is called from.
+ *                                                  Then it gives the user the option to change the
+ *                                                  current status of the job. Once it is selected
+ *                                                  the status of the job as well as the location of
+ *                                                  the job is passed back to the JobFragment, where
+ *                                                  the updates will be seen.
+ * ===============================================================================================*/
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,6 +24,15 @@ import android.widget.TextView;
 
 public class jobPopup extends Activity {
 
+    /* =============================================================================================
+     *          Function        :       onCreate
+     *
+     *          Description     :       This function gets info using intent from JobFragment,
+     *                                  displays it, then sends information back using intent after
+     *                                  user updates it.
+     *
+     *          Arguments       :       Bundle savedInstanceState
+     * ===========================================================================================*/
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

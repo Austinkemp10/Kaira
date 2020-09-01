@@ -1,5 +1,14 @@
 package com.example.android.portfolio;
-
+/* =================================================================================================
+ *              Project             :               Kaira
+ *              Filename            :               Login.java
+ *              Programmer          :               Austin Kempker
+ *              Date                :               08/31/2020
+ *              Description         :               This class takes user input of email and
+ *                                                  password and verifies it against the firebase
+ *                                                  backend, if successful it logs the user into
+ *                                                  their account.
+ * ===============================================================================================*/
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -30,6 +39,15 @@ public class Login extends AppCompatActivity {
     FirebaseAuth fAuth;
 
     Validation validation = new Validation();
+
+    /* =============================================================================================
+     *          Function        :       onCreate
+     *
+     *          Description     :       This function takes login credentials from a user and
+     *                                  verifies it against the firebase database.
+     *
+     *          Arguments       :       Bundle savedInstanceState
+     * ===========================================================================================*/
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

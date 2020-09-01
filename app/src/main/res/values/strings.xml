@@ -40,4 +40,8 @@
         <item>Rejected</item>
         <item>Interview</item>
     </string-array>
+
+    <!-- Strings for fragment_person.xml -->
+    <string name="Update">Update</string>
+    <string name="LogOut">LogOut</string>
 </resources>

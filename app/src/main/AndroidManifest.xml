@@ -3,6 +3,10 @@
     package="com.example.android.portfolio">
 
     <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.premission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.premission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -28,6 +32,11 @@
             android:theme="@style/AppTheme.CustomTheme">
 
         </activity>
+        <activity android:name=".personPopup"
+            android:theme="@style/AppTheme.CustomTheme">
+
+        </activity>
+        <receiver android:name=".helpers.Reminder"/>
     </application>
 
 </manifest>

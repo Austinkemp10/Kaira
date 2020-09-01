@@ -1,17 +1,23 @@
 package com.example.android.portfolio.helpers;
-
+/* =================================================================================================
+ *              Project             :               Kaira
+ *              Filename            :               JobAdapter.java
+ *              Programmer          :               Austin Kempker
+ *              Date                :               08/31/2020
+ *              Description         :               This is a helper class used to create the layout
+ *                                                  for the jobs on the ListFragment page. The color
+ *                                                  and design is decided here.
+ *
+ * ===============================================================================================*/
 import android.content.Context;
-import android.graphics.Color;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.android.portfolio.R;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 

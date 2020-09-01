@@ -1,15 +1,12 @@
-/* =================================================================================================
-    Class               :               validation
-    Programmer          :               Austin Kempker
-    Date                :               07/08/2020
-    Description         :               In this class I will be creating methods that will be used
-                                        in various parts of this application to validate and
-                                        authenticate data.
-
-    Additional Features :               None
- * ===============================================================================================*/
 package com.example.android.portfolio.helpers;
-
+/* =================================================================================================
+ *              Project             :               Kaira
+ *              Filename            :               Job.java
+ *              Programmer          :               Austin Kempker
+ *              Date                :               08/31/2020
+ *              Description         :               This is a helper class used to create functions
+ *                                                  used to validate user input.
+ * ===============================================================================================*/
 public class Validation {
 
     public boolean isEmpty(String s) {
