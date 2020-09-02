@@ -2,7 +2,9 @@
 Overview: 
 
     Kaira is an Android Mobile Application with the goal of helping users track their job application status and maintain a profile. It includes push notifications on a chosen timer, user authentication, and profile customization.
-  
+    
+    
+    
 Pages and files:
 
     Login Page:
@@ -40,9 +42,9 @@ Pages and files:
         (AddFragment.java)
         
             This class allows the user to enter informationfor a job and pushes it to the firebase databasecategorized under:
- *                                                      Root
- *                                                          |___Jobs
- *                                                                  |___Current User ID
+                                                       Root
+                                                           |___Jobs
+                                                                   |___Current User ID
           
     Person Page:
     
