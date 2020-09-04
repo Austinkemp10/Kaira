@@ -3,6 +3,9 @@ Overview:
 
     Kaira is an Android Mobile Application with the goal of helping users track their job application status and maintain a profile. It includes push notifications on a chosen timer, user authentication, and profile customization.
     
+    Video Walkthrough: https://youtube.com/watch?v=TDSr1O6WW0Q
+    Programmer LinkedIn: https://www.linkedin.com/in/austin-k-931770107/
+    
     
     
 Pages and files:
